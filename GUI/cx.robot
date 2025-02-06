@@ -1,0 +1,61 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${URL}            http://10.12.25.69/custcare_cu/login
+${BROWSER}        Chrome
+${USERNAME}       MUNKHMURUN
+${PASSWORD}       Muruu0729!
+${OK_BUTTON}      name:fromLegalNotice
+${USERNAME_FIELD}  id:j_username
+${PASSWORD_FIELD}  id:j_password
+${CUSTOMER_CONTRACTS_LINK}  xpath=//a[contains(@class, 'vtNodeLink') and contains(text(), 'Customer contracts')]
+${SEARCH_LINK}  css=a.vtLeafLinkHighL[href*='SearchForContractSU']
+${RESOURCE_NO_INPUT}  id:RESOURCENO
+
+*** Test Cases ***
+Login and Search Customer Contract
+    [Documentation]  Tests login and interaction with customer contracts
+    Open Browser to Login Page
+    Accept Legal Notice
+    Enter Credentials and Login
+    Expand Customer Contracts Section
+    Navigate to Search Page
+    Input Resource Number
+    [Teardown]  Close Browser
+
+*** Keywords ***
+Open Browser to Login Page
+    Open Browser  ${URL}  ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  0.2
+
+Accept Legal Notice
+    Wait Until Element Is Visible  ${OK_BUTTON}
+    Click Element  ${OK_BUTTON}
+    Wait Until Element Is Visible  ${USERNAME_FIELD}
+
+Enter Credentials and Login
+    Input Text  ${USERNAME_FIELD}  ${USERNAME}
+    Input Password  ${PASSWORD_FIELD}  ${PASSWORD}
+    Press Keys  None  RETURN
+
+Expand Customer Contracts Section
+    Wait Until Element Is Visible  ${CUSTOMER_CONTRACTS_LINK}  timeout=20
+    Click Element  ${CUSTOMER_CONTRACTS_LINK}
+    Sleep  1  # Adjust based on actual UI response
+
+Navigate to Search Page
+    # Debugging: Capture screenshot and log page source
+    Capture Page Screenshot  before_waiting_for_search_link.png
+    Log  ${SEARCH_LINK}
+    
+    # Wait for the element to be visible
+    Wait Until Element Is Visible  ${SEARCH_LINK}  timeout=20
+    Click Element  ${SEARCH_LINK}
+    
+    # Ensure the search page is loaded
+    Wait Until Element Is Visible  ${RESOURCE_NO_INPUT}  timeout=20
+
+Input Resource Number
+    Input Text  ${RESOURCE_NO_INPUT}  97685647619

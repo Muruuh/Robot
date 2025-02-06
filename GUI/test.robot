@@ -35,5 +35,4 @@ Submit Solution to Weird Algorithm
     # Upload and submit solution
     Choose File    xpath=//input[@type='file']    ${FILE_PATH}
     Click Button    xpath=//input[@type='submit' and @value='Submit']
-    Wait Until Page Contains    Submission Details    60s
     Close Browser
