@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.10.0 on win32)" generated="2025-02-11T18:13:22.721139" rpa="false" schemaversion="5">
+<suite id="s1" name="Cx" source="C:\Users\munkhmurun\OneDrive - mobicom\Desktop\Munkhmurun\Code\GUI\cx.robot">
+<test id="s1-t1" name="Run Case 1 Loop with Different Resource Numbers" line="29">
+<for flavor="IN">
+<iter>
+<kw name="Login and Search Customer Contract">
+<kw name="Open Browser to Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:22.957226" level="INFO">Opening browser 'Chrome' to base url 'http://10.12.25.69/custcare_cu/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T18:13:22.957226" elapsed="1.711778"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-11T18:13:24.669004" elapsed="0.031958"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-02-11T18:13:24.700962" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:22.957226" elapsed="1.745005"/>
+</kw>
+<kw name="Accept Legal Notice">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${OK_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:24.702231" elapsed="0.435736"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:25.138580" level="INFO">Clicking element 'name:fromLegalNotice'.</msg>
+<arg>${OK_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:25.137967" elapsed="0.515536"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:25.653503" elapsed="0.428775"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:24.702231" elapsed="1.380047"/>
+</kw>
+<kw name="Enter Credentials and Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:26.082278" level="INFO">Typing text 'MUNKHMURUN' into text field 'id:j_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:26.082278" elapsed="0.702530"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:26.784808" level="INFO">Typing password into text field 'id:j_password'.</msg>
+<msg time="2025-02-11T18:13:27.234033" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:26.784808" elapsed="0.744952"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:27.529760" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2025-02-11T18:13:27.529760" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2025-02-11T18:13:27.529760" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-02-11T18:13:27.529760" elapsed="0.341035"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:26.082278" elapsed="1.788517"/>
+</kw>
+<kw name="Expand Customer Contracts Section">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CUSTOMER_CONTRACTS_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:27.870795" elapsed="0.416283"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:28.287078" level="INFO">Clicking element 'xpath=//a[contains(@class, 'vtNodeLink') and contains(text(), 'Customer contracts')]'.</msg>
+<arg>${CUSTOMER_CONTRACTS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:28.287078" elapsed="0.484811"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:13:28.981757" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:28.771889" elapsed="0.209868"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:28.981757" elapsed="0.427649"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:27.870795" elapsed="1.538611"/>
+</kw>
+<kw name="Navigate to Search Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:29.409406" elapsed="0.428660"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:29.838066" level="INFO">Clicking element 'css=a.vtLeafLink[href*='SearchForContractSU']'.</msg>
+<arg>${SEARCH_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:29.838066" elapsed="0.581906"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:30.419972" elapsed="0.435100"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:29.409406" elapsed="1.445666"/>
+</kw>
+<kw name="Input Resource Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:30.855072" level="INFO">Typing text '97699769807' into text field 'id:RESOURCENO'.</msg>
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>${resource_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:30.855072" elapsed="0.711692"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:31.566764" level="INFO">Sending key(s) ('RETURN',) to id:RESOURCENO element.</msg>
+<msg time="2025-02-11T18:13:32.261387" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-02-11T18:13:32.261387" level="INFO">Releasing special key RETURN.</msg>
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-02-11T18:13:31.566764" elapsed="0.922228"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@class, 'DATblTDALinkTxt')]</arg>
+<arg>timeout=50</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:32.488992" elapsed="0.420831"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:32.909823" level="INFO">Clicking element 'xpath=//a[contains(@class, 'DATblTDALinkTxt')]'.</msg>
+<arg>xpath=//a[contains(@class, 'DATblTDALinkTxt')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:32.909823" elapsed="0.662225"/>
+</kw>
+<arg>${resource_number}</arg>
+<status status="PASS" start="2025-02-11T18:13:30.855072" elapsed="2.716976"/>
+</kw>
+<kw name="Click Expand Button to Enter Contract Details">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONTRACT_EXPAND_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:33.572819" elapsed="0.422437"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:33.995256" level="INFO">Clicking element 'xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs')]'.</msg>
+<arg>${CONTRACT_EXPAND_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:33.995256" elapsed="0.478088"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:13:36.482868" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:34.473344" elapsed="2.009524"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:33.572048" elapsed="2.910820"/>
+</kw>
+<arg>${i}</arg>
+<status status="PASS" start="2025-02-11T18:13:22.957226" elapsed="13.525642"/>
+</kw>
+<kw name="Change Status of Contract">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:36.482868" elapsed="0.415938"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:36.898806" level="INFO">Clicking element 'id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton'.</msg>
+<arg>id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:36.898806" elapsed="0.468333"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${STATUS_DROPDOWN}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:37.367139" elapsed="0.430810"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:37.797949" level="INFO">Selecting options from selection list 'id=STATUS' by value 2.</msg>
+<arg>${STATUS_DROPDOWN}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-11T18:13:37.797949" elapsed="1.704903"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REASON_DROPDOWN}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:39.502852" elapsed="0.419165"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:39.922017" level="INFO">Selecting options from selection list 'id=REASON' by value 1.</msg>
+<arg>${REASON_DROPDOWN}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-11T18:13:39.922017" elapsed="1.680094"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${OK_BUTTON_ID}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:41.602111" elapsed="0.415592"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:42.017703" level="INFO">Clicking element 'id=servicesStatusChange_formTag_SuOkButton'.</msg>
+<arg>${OK_BUTTON_ID}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:42.017703" elapsed="0.502257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:13:44.527465" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:42.519960" elapsed="2.007505"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:36.482868" elapsed="8.044597"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-11T18:13:44.527465" level="INFO">Iteration for 97699769807 in Case 1 completed</msg>
+<arg>Iteration for ${i} in Case 1 completed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-11T18:13:44.527465" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:13:46.540725" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:44.527465" elapsed="2.013260"/>
+</kw>
+<var name="${i}">97699769807</var>
+<status status="PASS" start="2025-02-11T18:13:22.957226" elapsed="23.583499"/>
+</iter>
+<var>${i}</var>
+<value>@{RESOURCE_NUMBERS_CASE_1}</value>
+<status status="PASS" start="2025-02-11T18:13:22.957226" elapsed="23.583499"/>
+</for>
+<doc>Loops through a set of resource numbers (Case 1)</doc>
+<status status="PASS" start="2025-02-11T18:13:22.941546" elapsed="23.599179"/>
+</test>
+<test id="s1-t2" name="Run Case 2 Loop with Different Resource Numbers" line="38">
+<for flavor="IN">
+<iter>
+<kw name="Login and Search Customer Contract">
+<kw name="Open Browser to Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:46.540725" level="INFO">Opening browser 'Chrome' to base url 'http://10.12.25.69/custcare_cu/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="1.830176"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-11T18:13:48.370901" elapsed="0.244473"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-02-11T18:13:48.615374" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="2.074649"/>
+</kw>
+<kw name="Accept Legal Notice">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${OK_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:48.615374" elapsed="0.426377"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:49.041751" level="INFO">Clicking element 'name:fromLegalNotice'.</msg>
+<arg>${OK_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:49.041751" elapsed="0.495783"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:49.537534" elapsed="0.417629"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:48.615374" elapsed="1.339789"/>
+</kw>
+<kw name="Enter Credentials and Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:49.955970" level="INFO">Typing text 'MUNKHMURUN' into text field 'id:j_username'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:49.955970" elapsed="0.710873"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:50.666843" level="INFO">Typing password into text field 'id:j_password'.</msg>
+<msg time="2025-02-11T18:13:51.102556" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:50.666843" elapsed="0.734270"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:51.401113" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2025-02-11T18:13:51.401113" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2025-02-11T18:13:51.401113" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-02-11T18:13:51.401113" elapsed="0.335432"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:49.955163" elapsed="1.781382"/>
+</kw>
+<kw name="Expand Customer Contracts Section">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CUSTOMER_CONTRACTS_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:51.736545" elapsed="0.420694"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:52.157239" level="INFO">Clicking element 'xpath=//a[contains(@class, 'vtNodeLink') and contains(text(), 'Customer contracts')]'.</msg>
+<arg>${CUSTOMER_CONTRACTS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:52.157239" elapsed="0.482393"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:13:52.851646" level="INFO">Slept 200 milliseconds.</msg>
+<arg>0.2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:52.639632" elapsed="0.212014"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:52.851646" elapsed="0.420122"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:51.736545" elapsed="1.535223"/>
+</kw>
+<kw name="Navigate to Search Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_LINK}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:53.271768" elapsed="0.420340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:53.692108" level="INFO">Clicking element 'css=a.vtLeafLink[href*='SearchForContractSU']'.</msg>
+<arg>${SEARCH_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:53.692108" elapsed="0.598201"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:54.290309" elapsed="0.429454"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:53.271768" elapsed="1.447995"/>
+</kw>
+<kw name="Input Resource Number">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:54.719763" level="INFO">Typing text '97699969797' into text field 'id:RESOURCENO'.</msg>
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>${resource_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:54.719763" elapsed="0.714719"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:55.434482" level="INFO">Sending key(s) ('RETURN',) to id:RESOURCENO element.</msg>
+<msg time="2025-02-11T18:13:56.129070" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-02-11T18:13:56.129070" level="INFO">Releasing special key RETURN.</msg>
+<arg>${RESOURCE_NO_INPUT}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-02-11T18:13:55.434482" elapsed="0.919838"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@class, 'DATblTDALinkTxt')]</arg>
+<arg>timeout=50</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:56.354320" elapsed="0.426593"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:56.781816" level="INFO">Clicking element 'xpath=//a[contains(@class, 'DATblTDALinkTxt')]'.</msg>
+<arg>xpath=//a[contains(@class, 'DATblTDALinkTxt')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:56.781511" elapsed="0.724846"/>
+</kw>
+<arg>${resource_number}</arg>
+<status status="PASS" start="2025-02-11T18:13:54.719763" elapsed="2.786594"/>
+</kw>
+<kw name="Click Expand Button to Enter Contract Details">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONTRACT_EXPAND_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:13:57.507357" elapsed="0.418925"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:13:57.926282" level="INFO">Clicking element 'xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs')]'.</msg>
+<arg>${CONTRACT_EXPAND_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:13:57.926282" elapsed="0.477341"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:14:00.412930" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:13:58.403623" elapsed="2.009307"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:13:57.506357" elapsed="2.906573"/>
+</kw>
+<arg>${i}</arg>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="13.872205"/>
+</kw>
+<kw name="Change Status of Contract">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:14:00.412930" elapsed="0.421011"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:14:00.833941" level="INFO">Clicking element 'id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton'.</msg>
+<arg>id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:14:00.833941" elapsed="0.485917"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${STATUS_DROPDOWN}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:14:01.319858" elapsed="0.432126"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:14:01.751984" level="INFO">Selecting options from selection list 'id=STATUS' by value 2.</msg>
+<arg>${STATUS_DROPDOWN}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-11T18:14:01.751984" elapsed="1.714438"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REASON_DROPDOWN}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:14:03.466422" elapsed="0.419514"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:14:03.885936" level="INFO">Selecting options from selection list 'id=REASON' by value 1.</msg>
+<arg>${REASON_DROPDOWN}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-02-11T18:14:03.885936" elapsed="1.700023"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${OK_BUTTON_ID}</arg>
+<arg>timeout=20</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-11T18:14:05.585959" elapsed="0.416703"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-11T18:14:06.002662" level="INFO">Clicking element 'id=servicesStatusChange_formTag_SuOkButton'.</msg>
+<arg>${OK_BUTTON_ID}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-11T18:14:06.002662" elapsed="0.482737"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:14:08.490359" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:14:06.485399" elapsed="2.004960"/>
+</kw>
+<status status="PASS" start="2025-02-11T18:14:00.412930" elapsed="8.077429"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-11T18:14:08.490359" level="INFO">Iteration for 97699969797 in Case 2 completed</msg>
+<arg>Iteration for ${i} in Case 2 completed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-11T18:14:08.490359" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-11T18:14:10.502054" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-11T18:14:08.490359" elapsed="2.011695"/>
+</kw>
+<var name="${i}">97699969797</var>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="23.961329"/>
+</iter>
+<var>${i}</var>
+<value>@{RESOURCE_NUMBERS_CASE_2}</value>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="23.961329"/>
+</for>
+<doc>Loops through a different set of resource numbers (Case 2)</doc>
+<status status="PASS" start="2025-02-11T18:13:46.540725" elapsed="23.961329"/>
+</test>
+<status status="PASS" start="2025-02-11T18:13:22.721139" elapsed="47.780915"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cx" id="s1" pass="2" fail="0" skip="0">Cx</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
