@@ -1,0 +1,103 @@
+Pending error:
+
+1: <ErrorMsg>0100: Reason [Parameter Error: No Bundle subscription]. Additional information []. </ErrorMsg> 
+   --------> POSTMAN -> [2. Submit] - Subs Bundle (Star)
+
+    <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <SubmitResponse xmlns="http://alcatel-lucent.com/esm/ws/svcmgr/V2_0">
+      <RequestInfo>
+        <ReqID>18305</ReqID>
+      </RequestInfo>
+      <Result>FAILURE</Result>
+      <TaskResponseList>
+        <TaskResponse>
+          <Name>Remove Bundle Subscription</Name>
+          <Result>FAILURE</Result>
+          <ErrorInfo>
+            <ErrorCode>-116</ErrorCode>
+            <ErrorMsg>0100: Reason [Parameter Error: No Bundle subscription]. Additional information []. </ErrorMsg>
+            <ErrorCategory/>
+          </ErrorInfo>
+          <ResubmitInfo>
+            <StartAt>0</StartAt>
+            <FailedAt>0</FailedAt>
+            <Action>USE_STARTAT</Action>
+          </ResubmitInfo>
+          <CollectionList/>
+        </TaskResponse>
+      </TaskResponseList>
+    </SubmitResponse>
+  </S:Body>
+</S:Envelope>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. <ResultDesc>ERR3001:Subscriber not defined</ResultDesc>
+-------------->POSTMAN Create Prepaid number ADD_TPLSUB      
+!!!!!!! bagtsaa sain haraarai xoxo
+      --  Postpaid = TPLID=21
+      -- Prepaid  = TPLID=22
+      --  Hybrid   = TPLID=23
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SOAP-ENV:Body>
+    <RMV_USCSUBResponse xmlns="http://www.huawei.com/HLR9820/RMV_USCSUB">
+      <Result>
+        <ResultCode>3001</ResultCode>
+        <ResultDesc>ERR3001:Subscriber not defined</ResultDesc>
+      </Result>
+    </RMV_USCSUBResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. <ResultDesc>The IMPI is already allocated to another subscription.</ResultDesc>
+-----------------> Nociin shift engineer ruu helj zasuulna
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SOAP-ENV:Body>
+    <ADD_HHSSSUBResponse xmlns="http://www.huawei.com/HLR9820/ADD_HHSSSUB">
+      <Result>
+        <ResultCode>900003099</ResultCode>
+        <ResultDesc>The IMPI is already allocated to another subscription.</ResultDesc>
+      </Result>
+    </ADD_HHSSSUBResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. <ErrorMsg>Unable to create Service Object. Service Object [97695310158] already exists in service [SUREPAY], Category [User SurePay]. WS_821010013101738921459229</ErrorMsg>
+-----------------> POSTMAN    DeleteSubscriber
+
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <SubmitResponse xmlns="http://alcatel-lucent.com/esm/ws/svcmgr/V2_0">
+      <RequestInfo>
+        <ReqID>26</ReqID>
+      </RequestInfo>
+      <Result>FAILURE</Result>
+      <TaskResponseList>
+        <TaskResponse>
+          <Name>Create Subscriber Account</Name>
+          <Result>FAILURE</Result>
+          <ErrorInfo>
+            <ErrorCode>1800</ErrorCode>
+            <ErrorMsg>Unable to create Service Object. Service Object [97695310158] already exists in service [SUREPAY], Category [User SurePay]. WS_821010013101738921459229</ErrorMsg>
+            <ErrorCategory/>
+          </ErrorInfo>
+          <ResubmitInfo>
+            <StartAt>0</StartAt>
+            <FailedAt>0</FailedAt>
+            <Action>USE_STARTAT</Action>
+          </ResubmitInfo>
+          <CollectionList/>
+        </TaskResponse>
+      </TaskResponseList>
+    </SubmitResponse>
+  </S:Body>
+</S:Envelope>

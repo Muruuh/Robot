@@ -32,8 +32,8 @@ Check POST Request to Test API
     &{headers}=    Create Dictionary    Content-Type=application/json
     
     ${payload}=    Create Dictionary
-    ...    title=foo
-    ...    body=bar
+    ...    title=xxotestshu
+    ...    body=basltestbody
     ...    userId=1
     
     ${response}=    POST On Session    testapi    /posts
@@ -42,8 +42,8 @@ Check POST Request to Test API
     
     Should Be Equal As Strings    ${response.status_code}    201
     ${json}=    Set Variable    ${response.json()}
-    Should Be Equal As Strings    ${json["title"]}    foo
-    Should Be Equal As Strings    ${json["body"]}     bar
+    Should Be Equal As Strings    ${json["title"]}    xxotestshu
+    Should Be Equal As Strings    ${json["body"]}     basltestbody
     Should Be Equal As Numbers    ${json["userId"]}    1
     
     [Teardown]    Delete All Sessions

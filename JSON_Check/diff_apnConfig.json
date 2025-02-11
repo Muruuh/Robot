@@ -1,0 +1,59 @@
+
+{
+  "values_changed": {
+    "root['APNList'][46]['APNNAME']": {
+      "new_value": "DataSim_credit", /* ericsson json*/
+      "old_value": "tdbnew"          /* my config json */
+    },
+    "root['APNList'][60]['APNNAME']": {
+      "new_value": "testmba",
+      "old_value": "ttsa"
+    },
+    "root['APNList'][63]['APNNAME']": {
+      "new_value": "zbqmlxt",
+      "old_value": "MSHUT"
+    },
+    "root['APNList'][64]['APNNAME']": {
+      "new_value": "gpsbox",
+      "old_value": "UBEDN.CORP"
+    },
+    "root['APNList'][66]['APNNAME']": {
+      "new_value": "khuveh",
+      "old_value": "OTLTE"
+    },
+    "root['APNList'][78]['APNNAME']": {
+      "new_value": "NSTU",
+      "old_value": "UBEG"
+    }
+  },
+
+
+
+  "iterable_item_removed": {
+    "root['APNList'][45]": {
+      "APNNAME": "auehs",
+      "APNID": "64",
+      "Roaming": "n"
+    },
+    "root['APNList'][53]": {
+      "APNNAME": "ASHIM",
+      "APNID": "73",
+      "Roaming": "n"
+    },
+    "root['APNList'][79]": {
+      "APNNAME": "OTOAS",
+      "APNID": "100",
+      "Roaming": "n"
+    },
+    "root['APNList'][80]": {
+      "APNNAME": "KHANPOWER",
+      "APNID": "102",
+      "Roaming": "n"
+    },
+    "root['APNList'][81]": {
+      "APNNAME": "bpoboomt",
+      "APNID": "58",
+      "Roaming": "n"
+    }
+  }
+}

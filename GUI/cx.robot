@@ -10,8 +10,9 @@ ${OK_BUTTON}      name:fromLegalNotice
 ${USERNAME_FIELD}  id:j_username
 ${PASSWORD_FIELD}  id:j_password
 ${CUSTOMER_CONTRACTS_LINK}  xpath=//a[contains(@class, 'vtNodeLink') and contains(text(), 'Customer contracts')]
-${SEARCH_LINK}  css=a.vtLeafLinkHighL[href*='SearchForContractSU']
+${SEARCH_LINK}  css=a.vtLeafLink[href*='SearchForContractSU']
 ${RESOURCE_NO_INPUT}  id:RESOURCENO
+
 
 *** Test Cases ***
 Login and Search Customer Contract
@@ -22,6 +23,8 @@ Login and Search Customer Contract
     Expand Customer Contracts Section
     Navigate to Search Page
     Input Resource Number
+    Click Expand Button to Enter Contract Details
+    Change Status of Contract
     [Teardown]  Close Browser
 
 *** Keywords ***
@@ -43,19 +46,26 @@ Enter Credentials and Login
 Expand Customer Contracts Section
     Wait Until Element Is Visible  ${CUSTOMER_CONTRACTS_LINK}  timeout=20
     Click Element  ${CUSTOMER_CONTRACTS_LINK}
-    Sleep  1  # Adjust based on actual UI response
+    Sleep  0.2  # Adjust based on actual UI response
+    Wait Until Element Is Visible  ${SEARCH_LINK}  timeout=20
 
 Navigate to Search Page
-    # Debugging: Capture screenshot and log page source
-    Capture Page Screenshot  before_waiting_for_search_link.png
-    Log  ${SEARCH_LINK}
-    
-    # Wait for the element to be visible
     Wait Until Element Is Visible  ${SEARCH_LINK}  timeout=20
     Click Element  ${SEARCH_LINK}
-    
-    # Ensure the search page is loaded
     Wait Until Element Is Visible  ${RESOURCE_NO_INPUT}  timeout=20
 
 Input Resource Number
-    Input Text  ${RESOURCE_NO_INPUT}  97685647619
+    Input Text  ${RESOURCE_NO_INPUT}  97699769807
+    Press Keys  ${RESOURCE_NO_INPUT}  RETURN
+    Wait Until Element Is Visible  xpath=//a[contains(@class, 'DATblTDALinkTxt')]  timeout=50
+    Click Element  xpath=//a[contains(@class, 'DATblTDALinkTxt')]
+
+Click Expand Button to Enter Contract Details
+    Wait Until Element Is Visible  xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs')]
+    Click Element  xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs')]
+    Sleep  2
+
+Change Status of Contract
+    Wait Until Element Is Visible  id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton  timeout=20
+    Click Element  id=ContractOverviewMainForm_formTag_ServicesStatusChangeButton
+    Sleep  2
