@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-${URL}            http://10.12.25.69/custcare_cu/login
+${URL}            http://10.12.25.165/custcare_cu/login                                            #http://10.12.25.69/custcare_cu/login
 ${BROWSER}        Chrome
 ${USERNAME}       MUNKHMURUN
 ${PASSWORD}       Muruu0729!
@@ -13,17 +13,18 @@ ${PASSWORD_FIELD}  id:j_password
 ${CUSTOMER_CONTRACTS_LINK}  xpath=//a[contains(@class, 'vtNodeLink') and contains(text(), 'Customer contracts')]
 ${SEARCH_LINK}  css=a.vtLeafLink[href*='SearchForContractSU']
 ${RESOURCE_NO_INPUT}  id:RESOURCENO
-${CONTRACT_EXPAND_BUTTON}  xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs')]
+${SERVICE_TREE_EXPAND_BUTTON}  xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs') and contains(@onclick, 'ServiceTree')]
+${SERVICES_TABLE_EXPAND_BUTTON}  xpath=//a[contains(@class, 'DATreeItemLink') and contains(@onclick, 'loadAndReplaceDivs') and contains(@onclick, 'SERVICES_TABLE')]
 ${STATUS_DROPDOWN}  id=STATUS
 ${REASON_DROPDOWN}  id=REASON
 ${OK_BUTTON_ID}  id=servicesStatusChange_formTag_SuOkButton
 
 *** Variables ***
 # Test Case 1
-@{RESOURCE_NUMBERS_CASE_1}  97699769807
+@{RESOURCE_NUMBERS_CASE_1}  97695306279
 
 # Test Case 2
-@{RESOURCE_NUMBERS_CASE_2}  97699969797
+@{RESOURCE_NUMBERS_CASE_2}  97695306279
 
 *** Test Cases ***
 Run Case 1 Loop with Different Resource Numbers
@@ -62,8 +63,12 @@ Change Status of Contract
     Select From List By Value  ${STATUS_DROPDOWN}  2
     Wait Until Element Is Visible  ${REASON_DROPDOWN}  timeout=20
     Select From List By Value  ${REASON_DROPDOWN}  1 
-    # Wait Until Element Is Visible  ${OK_BUTTON_ID}  timeout=20  "Don't comment. Clear!"!!!!!!!!!!!!!!!!!
-    # Click Element  ${OK_BUTTON_ID}   "Don't comment. Clear!"!!!!!!!!!!!!!!!!!
+    Wait Until Element Is Visible    ${SERVICE_TREE_EXPAND_BUTTON}
+    Click Element   ${SERVICE_TREE_EXPAND_BUTTON}
+    Wait Until Element Is Visible  xpath=(//input[@type='checkbox'])[3]  timeout=10
+    Click Element  xpath=(//input[@type='checkbox'])[3] 
+    # Wait Until Element Is Visible  ${OK_BUTTON_ID}  timeout=20 
+    # Click Element  ${OK_BUTTON_ID}   
     Sleep  2 
 
 Open Browser to Login Page
@@ -100,8 +105,8 @@ Input Resource Number
     Click Element  xpath=//a[contains(@class, 'DATblTDALinkTxt')]
 
 Click Expand Button to Enter Contract Details
-    Wait Until Element Is Visible  ${CONTRACT_EXPAND_BUTTON}
-    Click Element  ${CONTRACT_EXPAND_BUTTON}
+    Wait Until Element Is Visible  ${SERVICES_TABLE_EXPAND_BUTTON}
+    Click Element  ${SERVICES_TABLE_EXPAND_BUTTON}
     Sleep  2
 
 [Teardown]  Close Browser
